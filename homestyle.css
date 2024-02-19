@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.eot');
+  src: url('Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+      url('Poppins-Regular.woff2') format('woff2'),
+      url('Poppins-Regular.woff') format('woff'),
+      url('Poppins-Regular.ttf') format('truetype'),
+      url('Poppins-Regular.svg#Poppins-Regular') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: normal;
+}
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    padding: 50px;
+  }
+
+nav {
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+nav ul li:last-child {
+  border-bottom: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+  background-color: #444;
+}
+
+nav ul li ul {
+  display: none;
+  position: relative;
+  top: 0;
+  left: 100%;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li {
+  padding: 0;
+}
+
+nav ul li ul li a {
+  padding: 5px 10px;
+}
+
+nav ul li ul li a:hover {
+  color: #ddd;
+  background-color: #555;
+}
+
+nav ul li ul li ul {
+  left: 100%;
+  top: 0;
+}
+
+nav ul li ul li ul li a {
+  padding: 5px 15px;
+}
+
+nav ul li ul li ul li a:hover {
+  color: #ddd;
+  background-color: #555;
+}
+
+body {
+  background-color: #d8cccc;
+}
+
+#diagram {
+  background-color: #ddd;
+  height: 300px;
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.box {
+  background-color: #333;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+.box-1 {
+  top: 10px;
+  left: 10px;
+}
+
+.box-2 {
+  top: 10px;
+  right: 10px;
+}
+
+.box-3 {
+  bottom: 10px;
+  left: 10px;
+}
+
+.box-4 {
+  bottom: 10px;
+  right: 10px;
+}
+
+.box-5 {
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
