@@ -45,14 +45,14 @@
                     <td>
                         <select name="level">
                             <option value="admin" <?= $user["level"] == "admin" ? "selected" : "" ?>>admin</option>
-                            <option value="keuangan" <?= $user["level"] == "keuangan" ? "selected" : "" ?>>keuangan</option>
-                            <option value="logistik" <?= $user["level"] == "logistik" ? "selected" : "" ?>>logistik</option>
+                            <option value="finance" <?= $user["level"] == "finance" ? "selected" : "" ?>>finance</option>
+                            <option value="logistics" <?= $user["level"] == "logistics" ? "selected" : "" ?>>logistics</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button type="submit">SIMPAN</button>
+                        <button type="submit">SAVE</button>
                         <button type="reset">RESET</button>
                     </td>
                 </tr>

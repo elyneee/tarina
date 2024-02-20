@@ -2,12 +2,12 @@
 
 require "koneksi.php";
 
-$barang = $_POST["barang"];
+$product = $_POST["product"];
 
 $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $level = $_POST["level"];
 
-$sql = "INSERT INTO user (barang, password, level) VALUES ('$barang', '$password', '$level')";
+$sql = "INSERT INTO user (product, password, level) VALUES ('$product', '$password', '$level')";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

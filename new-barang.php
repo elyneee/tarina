@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>New Barang</title>
+    <title>New product</title>
 </head>
 
 <body>
     <?php include "menu.php"; ?>
 
     <?php
-    if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistik") {
+    if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistics") {
         echo "Anda tidak dapat mengakses halaman ini";
         exit;
     }
@@ -17,36 +17,36 @@
 
     <div>
         <form action="create-barang.php" method="POST">
-            <h1>Tambah barang</h1>
+            <h1>Add product</h1>
             <table>
                 <tr>
-                    <td>Nama</td>
-                    <td><input type="text" name="nama"></td>
+                    <td>product_name</td>
+                    <td><input type="text" product_name="product_name"></td>
                 </tr>
                 <tr>
-                    <td>Kategori</td>
+                    <td>category</td>
                     <td>
-                        <select name="kategori">
-                            <option value="makanan">makanan</option>
-                            <option value="minuman">minuman</option>
+                        <select product_name="category">
+                            <option value="top">top</option>
+                            <option value="bottom">bottom</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Stok</td>
-                    <td><input type="number" min="0" name="stok"></td>
+                    <td>stock</td>
+                    <td><input type="number" min="0" product_name="stock"></td>
                 </tr>
                 <tr>
-                    <td>Harga Beli</td>
-                    <td><input type="number" min="0" name="harga_beli"></td>
+                    <td>price Beli</td>
+                    <td><input type="number" min="0" product_name="price_beli"></td>
                 </tr>
                 <tr>
-                    <td>Harga Jual</td>
-                    <td><input type="number" min="0" name="harga_jual"></td>
+                    <td>price Jual</td>
+                    <td><input type="number" min="0" product_name="price_jual"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button type="submit">SIMPAN</button>
+                        <button type="submit">SAVE</button>
                         <button type="reset">RESET</button>
                     </td>
                 </tr>

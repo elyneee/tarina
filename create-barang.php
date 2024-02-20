@@ -2,13 +2,12 @@
 
 require "koneksi.php";
 
-$nama = $_POST["nama"];
-$kategori = $_POST["kategori"];
-$stok = $_POST["stok"];
-$harga_beli = $_POST["harga_beli"];
-$harga_jual = $_POST["harga_jual"];
+$product_name = $_POST["product_name"];
+$category = $_POST["category"];
+$stock = $_POST["stock"];
+$price = $_POST["price"];
 
-$sql = "INSERT INTO barang (nama, kategori, stok, harga_jual, harga_beli) VALUES ('$nama', '$kategori', '$stok', '$harga_jual', '$harga_beli')";
+$sql = "INSERT INTO product (product_name, category, stock, price) VALUES ('$product_name', '$category', '$stock', '$price')";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

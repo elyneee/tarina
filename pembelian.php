@@ -12,21 +12,21 @@
 
     require "koneksi.php";
 
-    $sql = "SELECT pembelian.id, barang.nama as nama_barang, pembelian.jumlah, pembelian.total_harga, user.username, pembelian.created_at FROM barang JOIN pembelian on barang.id = pembelian.id_barang JOIN user ON user.id = pembelian.id_staff ORDER BY pembelian.created_at DESC";
+    $sql = "SELECT pembelian.id, product.name as name_product, pembelian.quantity, pembelian.total_amount, user.username, pembelian.created_at FROM product JOIN pembelian on product.id = pembelian.id_product JOIN user ON user.id = pembelian.id_user ORDER BY pembelian.created_at DESC";
     $query = mysqli_query($koneksi, $sql);
     ?>
 
     <div>
         <h1>Data Pembelian</h1>
         <form action="new-pembelian.php" method="get">
-            <button type="submit">Tambah</button>
+            <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>Nama Barang</th>
-                <th>Jumlah</th>
-                <th>Total Harga</th>
+                <th>name product</th>
+                <th>quantity</th>
+                <th>Total price</th>
                 <th>Diinput oleh</th>
                 <th>Waktu</th>
                 <th colspan="2">Aksi</th>
@@ -36,9 +36,9 @@
             <?php while ($pembelian = mysqli_fetch_array($query)) : ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><?= $pembelian["nama_barang"] ?></td>
-                    <td><?= $pembelian["jumlah"] ?></td>
-                    <td><?= $pembelian["total_harga"] ?></td>
+                    <td><?= $pembelian["name_product"] ?></td>
+                    <td><?= $pembelian["quantity"] ?></td>
+                    <td><?= $pembelian["total_amount"] ?></td>
                     <td><?= $pembelian["username"] ?></td>
                     <td><?= $pembelian["created_at"] ?></td>
                     <td>
@@ -62,7 +62,7 @@
         function konfirmasi(form) {
             formData = new FormData(form);
             id = formData.get("id");
-            return confirm(`Hapus penjualan '${id}'?`);
+            return confirm(`Hapus sales '${id}'?`);
         }
     </script>
 </body>

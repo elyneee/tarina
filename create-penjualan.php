@@ -4,26 +4,26 @@ require "koneksi.php";
 
 session_start();
 
-$id_barang = $_POST["id_barang"];
-$jumlah = $_POST["jumlah"];
+$id_product = $_POST["id_product"];
+$quantity = $_POST["quantity"];
 
-$sql = "SELECT harga_jual, stok FROM barang WHERE id = '$id_barang'";
+$sql = "SELECT price_jual, stock FROM product WHERE id = '$id_product'";
 $query = mysqli_query($koneksi, $sql);
-$barang = mysqli_fetch_array($query);
+$product = mysqli_fetch_array($query);
 
-if ($jumlah > $barang["stok"]) {
-    echo "Stok barang tidak mencukupi";
+if ($quantity > $product["stock"]) {
+    echo "stock product tidak mencukupi";
     exit;
 }
 
-$total_harga = $jumlah * $barang["harga_jual"];
+$total_amount = $quantity * $product["price_jual"];
 
-$id_staff = $_SESSION["id"];
+$id_user = $_SESSION["id"];
 
-$sql = "INSERT INTO penjualan (id_barang, jumlah, total_harga, id_staff) VALUES ('$id_barang', '$jumlah', '$total_harga', '$id_staff')";
+$sql = "INSERT INTO sales (id_product, quantity, total_amount, id_user) VALUES ('$id_product', '$quantity', '$total_amount', '$id_user')";
 mysqli_query($koneksi, $sql);
 
-$sql = "UPDATE barang SET stok = stok - $jumlah WHERE id = '$id_barang'";
+$sql = "UPDATE product SET stock = stock - $quantity WHERE id = '$id_product'";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

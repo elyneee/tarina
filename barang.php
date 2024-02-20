@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Barang</title>
+    <title>Product</title>
 </head>
 
 <body>
@@ -12,47 +12,45 @@
 
     require "koneksi.php";
 
-    $sql = "SELECT * FROM barang";
+    $sql = "SELECT * FROM product";
     $query = mysqli_query($koneksi, $sql);
     ?>
 
     <div>
-        <h1>Data barang</h1>
+        <h1>Data product</h1>
         <form action="new-barang.php" method="GET">
-            <button type="submit">Tambah</button>
+            <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
-                <th>Kategori</th>
-                <th>Stok</th>
-                <th>Harga beli</th>
-                <th>Harga jual</th>
-                <th>Dibuat pada</th>
-                <th>Diubah pada</th>
-                <th colspan="2">Aksi</th>
+                <th>product_name</th>
+                <th>Category</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th colspan="2">Action</th>
             </tr>
             <?php $i = 1; ?>
-            <?php while ($barang = mysqli_fetch_array($query)) : ?>
+            <?php while ($product = mysqli_fetch_array($query)) : ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><?= $barang["nama"] ?></td>
-                    <td><?= $barang["kategori"] ?></td>
-                    <td><?= $barang["stok"] ?></td>
-                    <td><?= $barang["harga_beli"] ?></td>
-                    <td><?= $barang["harga_jual"] ?></td>
-                    <td><?= $barang["created_at"] ?></td>
-                    <td><?= $barang["updated_at"] ?></td>
+                    <td><?= $product["product_name"] ?></td>
+                    <td><?= $product["category"] ?></td>
+                    <td><?= $product["stock"] ?></td>
+                    <td><?= $product["price"] ?></td>
+                    <td><?= $product["created_at"] ?></td>
+                    <td><?= $product["updated_at"] ?></td>
                     <td>
                         <form action="read-barang.php" method="GET">
-                            <input type="hidden" name="id" value='<?= $barang["id"] ?>'>
-                            <button type="submit">Lihat</button>
+                            <input type="hidden" product_name="id" value='<?= $product["id"] ?>'>
+                            <button type="submit">See</button>
                         </form>
                     </td>
                     <td>
                         <form action="delete-barang.php" method="POST" onsubmit="return konfirmasi(this)">
-                            <input type="hidden" name="id" value='<?= $barang["id"] ?>'>
+                            <input type="hidden" product_name="id" value='<?= $product["id"] ?>'>
                             <button type="submit">Delete</button>
                         </form>
                     </td>
@@ -65,7 +63,7 @@
         function konfirmasi(form) {
             formData = new FormData(form);
             id = formData.get("id");
-            return confirm(`Hapus barang '${id}'?`);
+            return confirm(`Delete product '${id}'?`);
         }
     </script>
 </body>

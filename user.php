@@ -24,7 +24,7 @@
     <div>
         <h1>Data User</h1>
         <form action="new-user.php" method="GET">
-            <button type="submit">Tambah</button>
+            <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>

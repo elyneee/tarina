@@ -19,7 +19,7 @@
     <div>
         <!-- username, password, dan level dikirim ke create-user.php -->
         <form action="create-user.php" method="POST">
-            <h1>Tambah User</h1>
+            <h1>Add User</h1>
             <table>
                 <tr>
                     <td>Username</td>
@@ -34,14 +34,14 @@
                     <td>
                         <select name="level">
                             <option value="admin">admin</option>
-                            <option value="keuangan">keuangan</option>
-                            <option value="logistik">logistik</option>
+                            <option value="finance">finance</option>
+                            <option value="logistics">logistics</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button type="submit">SIMPAN</button>
+                        <button type="submit">SAVE</button>
                         <button type="reset">RESET</button>
                     </td>
                 </tr>

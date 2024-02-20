@@ -4,21 +4,21 @@ require "koneksi.php";
 
 session_start();
 
-$id_barang = $_POST["id_barang"];
-$jumlah = $_POST["jumlah"];
+$id_product = $_POST["id_product"];
+$quantity = $_POST["quantity"];
 
-$sql = "SELECT harga_beli FROM barang WHERE id = '$id_barang'";
+$sql = "SELECT price_beli FROM product WHERE id = '$id_product'";
 $query = mysqli_query($koneksi, $sql);
-$barang = mysqli_fetch_array($query);
+$product = mysqli_fetch_array($query);
 
-$total_harga = $jumlah * $barang["harga_beli"];
+$total_amount = $quantity * $product["price_beli"];
 
-$id_staff = $_SESSION["id"];
+$id_user = $_SESSION["id"];
 
-$sql = "INSERT INTO pembelian (id_barang, jumlah, total_harga, id_staff) VALUES ('$id_barang', '$jumlah', '$total_harga', '$id_staff')";
+$sql = "INSERT INTO pembelian (id_product, quantity, total_amount, id_user) VALUES ('$id_product', '$quantity', '$total_amount', '$id_user')";
 mysqli_query($koneksi, $sql);
 
-$sql = "UPDATE barang SET stok = stok + $jumlah WHERE id = '$id_barang'";
+$sql = "UPDATE product SET stock = stock + $quantity WHERE id = '$id_product'";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

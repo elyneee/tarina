@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Read Barang</title>
+    <title>Read product</title>
 </head>
 
 <body>
@@ -14,48 +14,48 @@
 
     $id = $_GET["id"];
 
-    $sql = "SELECT * FROM barang WHERE id = '$id'";
+    $sql = "SELECT * FROM product WHERE id = '$id'";
 
     $query = mysqli_query($koneksi, $sql);
 
-    $barang = mysqli_fetch_array($query);
+    $product = mysqli_fetch_array($query);
     ?>
 
     <div>
-        <form action="update-barang.php" method="POST">
-            <h1>Lihat Barang</h1>
+        <form action="update-product.php" method="POST">
+            <h1>Lihat product</h1>
 
-            <input type="hidden" name="id" value=" <?= $id ?>">
+            <input type="hidden" product_name="id" value=" <?= $id ?>">
 
             <table>
                 <tr>
-                    <td>Nama</td>
-                    <td><input type="text" name="nama" value="<?= $barang["nama"] ?>"></td>
+                    <td>product_name</td>
+                    <td><input type="text" product_name="product_name" value="<?= $product["product_name"] ?>"></td>
                 </tr>
                 <tr>
-                    <td>Kategori</td>
+                    <td>category</td>
                     <td>
-                        <select name="kategori">
-                            <option value="makanan" <?= $barang["kategori"] == "makanan" ? "selected" : "" ?>>makanan</option>
-                            <option value="minuman" <?= $barang["kategori"] == "minuman" ? "selected" : "" ?>>minuman</option>
+                        <select product_name="category">
+                            <option value="top" <?= $product["category"] == "top" ? "selected" : "" ?>>top</option>
+                            <option value="bottom" <?= $product["category"] == "bottom" ? "selected" : "" ?>>bottom</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Stok</td>
-                    <td><input type="number" name="stok" value="<?= $barang["stok"] ?>"></td>
+                    <td>stock</td>
+                    <td><input type="number" product_name="stock" value="<?= $product["stock"] ?>"></td>
                 </tr>
                 <tr>
-                    <td>Harga Beli</td>
-                    <td><input type="number" name="harga_beli" value="<?= $barang["harga_beli"] ?>"></td>
+                    <td>price Beli</td>
+                    <td><input type="number" product_name="price_beli" value="<?= $product["price_beli"] ?>"></td>
                 </tr>
                 <tr>
-                    <td>Harga Jual</td>
-                    <td><input type="number" name="harga_jual" value="<?= $barang["harga_jual"] ?>"></td>
+                    <td>price Jual</td>
+                    <td><input type="number" product_name="price_jual" value="<?= $product["price_jual"] ?>"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button type="submit">SIMPAN</button>
+                        <button type="submit">SAVE</button>
                         <button type="reset">RESET</button>
                     </td>
                 </tr>

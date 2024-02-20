@@ -2,14 +2,14 @@
     <html>
 
     <head>
-        <title>New Penjualan</title>
+        <title>New sales</title>
     </head>
 
     <body>
         <?php include "menu.php"; ?>
 
         <?php
-        if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "keuangan") {
+        if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "finance") {
             echo "Anda tidak dapat mengakses halaman ini";
             exit;
         }
@@ -18,33 +18,33 @@
         <?php
         require "koneksi.php";
 
-        $sql = "SELECT * FROM barang";
+        $sql = "SELECT * FROM product";
         $query = mysqli_query($koneksi, $sql);
         ?>
 
         <div>
-            <form action="create-penjualan.php" method="post">
-                <h1>Tambah Penjualan</h1>
+            <form action="create-sales.php" method="post">
+                <h1>Add sales</h1>
                 <table>
                     <tr>
-                        <td>Barang</td>
+                        <td>product</td>
                         <td>
-                            <select name="id_barang">
-                                <?php while ($barang = mysqli_fetch_array($query)) : ?>
-                                    <option value='<?= $barang["id"] ?>'>
-                                        <?= $barang["nama"] ?>, harga: <?= $barang["harga_jual"] ?>, stok: <?= $barang["stok"] ?>
+                            <select name="id_product">
+                                <?php while ($product = mysqli_fetch_array($query)) : ?>
+                                    <option value='<?= $product["id"] ?>'>
+                                        <?= $product["name"] ?>, price: <?= $product["price_jual"] ?>, stock: <?= $product["stock"] ?>
                                     </option>
                                 <?php endwhile ?>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Jumlah</td>
-                        <td><input type="number" min="0" name="jumlah"></td>
+                        <td>quantity</td>
+                        <td><input type="number" min="0" name="quantity"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button type="submit">SIMPAN</button>
+                            <button type="submit">SAVE</button>
                             <button type="reset">RESET</button>
                         </td>
                     </tr>

@@ -11,7 +11,7 @@ if ($_SESSION["level"] != "admin") {
 
 $id = $_POST["id"];
 
-$sql = "DELETE FROM penjualan WHERE id = '$id'";
+$sql = "DELETE FROM sales WHERE id = '$id'";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

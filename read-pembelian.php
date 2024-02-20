@@ -17,7 +17,7 @@
     $id = $_GET["id"];
 
     // cari pembelian yang memiliki id tersebut
-    $sql = "SELECT pembelian.id, barang.nama as nama_barang, pembelian.jumlah, pembelian.total_harga, user.username, pembelian.created_at FROM barang JOIN pembelian on barang.id = pembelian.id_barang JOIN user ON user.id = pembelian.id_staff WHERE pembelian.id = '$id'";
+    $sql = "SELECT pembelian.id, product.name as name_product, pembelian.quantity, pembelian.total_amount, user.username, pembelian.created_at FROM product JOIN pembelian on product.id = pembelian.id_product JOIN user ON user.id = pembelian.id_user WHERE pembelian.id = '$id'";
     $query = mysqli_query($koneksi, $sql);
     $pembelian = mysqli_fetch_array($query);
     ?>
@@ -26,16 +26,16 @@
         <h1>Lihat pembelian</h1>
         <table>
             <tr>
-                <td>Nama barang</td>
-                <td><input readonly type="text" value="<?= $pembelian["nama_barang"] ?>"></td>
+                <td>name product</td>
+                <td><input readonly type="text" value="<?= $pembelian["name_product"] ?>"></td>
             </tr>
             <tr>
-                <td>Jumlah</td>
-                <td><input readonly type="text" value="<?= $pembelian["jumlah"] ?>"></td>
+                <td>quantity</td>
+                <td><input readonly type="text" value="<?= $pembelian["quantity"] ?>"></td>
             </tr>
             <tr>
-                <td>Total harga</td>
-                <td><input readonly type="text" value="<?= $pembelian["total_harga"] ?>"></td>
+                <td>Total price</td>
+                <td><input readonly type="text" value="<?= $pembelian["total_amount"] ?>"></td>
             </tr>
             <tr>
                 <td>Diinput oleh</td>

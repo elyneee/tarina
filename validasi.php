@@ -7,9 +7,9 @@ $password = $_POST["password"];
 
 $sql = "SELECT * FROM user WHERE username = '$username'";
 $query = mysqli_query($koneksi, $sql);
-$jumlah_user = mysqli_num_rows($query);
+$quantity_user = mysqli_num_rows($query);
 
-if ($jumlah_user == 1) {
+if ($quantity_user == 1) {
     $user = mysqli_fetch_array($query);
     $password_benar = password_verify($password, $user["password"]);
 
