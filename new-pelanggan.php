@@ -2,43 +2,43 @@
 <html>
 
 <head>
-    <title>New Product</title>
+    <title>New Customer</title>
 </head>
 
 <body>
     <?php include "menu.php"; ?>
 
     <?php
-    if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistics") {
+    if ($_SESSION["level"] != "admin") {
         echo "Anda tidak dapat mengakses halaman ini";
         exit;
     }
     ?>
 
     <div>
-        <form action="create-barang.php" method="POST">
-            <h1>Add Product</h1>
+        <form action="create-pelanggan.php" method="POST">
+            <h1>Add Customer</h1>
             <table>
                 <tr>
-                    <td>Name</td>
-                    <td><input type="text" name="name"></td>
+                    <td>First Name</td>
+                    <td><input type="text" first_name="first_name"></td>
                 </tr>
                 <tr>
-                    <td>Category</td>
+                    <td>Last Name</td>
                     <td>
-                        <select name="category">
+                        <select first_name="last_name">
                             <option value="top">Top</option>
                             <option value="bottom">Bottom</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Stock</td>
-                    <td><input type="number" min="0" name="stock"></td>
+                    <td>Address</td>
+                    <td><input type="number" min="0" name="address"></td>
                 </tr>
                 <tr>
-                    <td>Price</td>
-                    <td><input type="number" min="0" name="price_beli"></td>
+                    <td>Phone Number</td>
+                    <td><input type="number" min="0" name="phone_number"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

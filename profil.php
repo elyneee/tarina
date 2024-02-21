@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Profil</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 
     <div>
         <form action="update-profil.php" method="post">
-            <h1>Profil</h1>
+            <h1>Profile</h1>
 
             <input type="hidden" name="id" value="<?= $id ?>">
 

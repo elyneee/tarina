@@ -2,63 +2,56 @@
 <html>
 
 <head>
-    <title>User</title>
+    <title>Customer</title>
     <link rel="stylesheet" href="datastyle.css">
 </head>
-
-<style>
-    body {
-        background-color: #5e412a;
-        padding: 2rem;
-    }
-</style>
 
 <body>
     <?php include "menu.php"; ?>
 
     <?php
-    if ($_SESSION["level"] != "admin") {
-        echo "Anda tidak dapat mengakses halaman ini";
-        exit;
-    }
 
     require "koneksi.php";
 
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * FROM customer";
     $query = mysqli_query($koneksi, $sql);
     ?>
 
     <div>
-        <h1>Data User</h1>
-        <form action="new-user.php" method="GET">
+        <h1>Customer Data</h1>
+        <form action="new-pelanggan.php" method="GET">
             <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>Username</th>
-                <th>Level</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
                 <th>Created at</th>
                 <th>Updated at</th>
                 <th colspan="2">Action</th>
             </tr>
             <?php $i = 1; ?>
-            <?php while ($user = mysqli_fetch_array($query)) : ?>
+            <?php while ($customer = mysqli_fetch_array($query)) : ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><?= $user["username"] ?></td>
-                    <td><?= $user["level"] ?></td>
-                    <td><?= $user["created_at"] ?></td>
-                    <td><?= $user["updated_at"] ?></td>
+                    <td><?= $customer["first_name"] ?></td>
+                    <td><?= $customer["last_name"] ?></td>
+                    <td><?= $customer["address"] ?></td>
+                    <td><?= $customer["phone_number"] ?></td>
+                    <td><?= $customer["created_at"] ?></td>
+                    <td><?= $customer["updated_at"] ?></td>
                     <td>
-                        <form action="read-user.php" method="GET">
-                            <input type="hidden" name="id" value='<?= $user["id"] ?>'>
+                        <form action="read-pelanggan.php" method="GET">
+                            <input type="hidden" name="id" value='<?= $customer["id"] ?>'>
                             <button type="submit">See</button>
                         </form>
                     </td>
                     <td>
-                        <form action="delete-user.php" method="POST" onsubmit="return konfirmasi(this)">
-                            <input type="hidden" name="id" value='<?= $user["id"] ?>'>
+                        <form action="delete-pelanggan.php" method="POST" onsubmit="return konfirmasi(this)">
+                            <input type="hidden" name="id" value='<?= $customer["id"] ?>'>
                             <button type="submit">Delete</button>
                         </form>
                     </td>
@@ -71,7 +64,7 @@
         function konfirmasi(form) {
             formData = new FormData(form);
             id = formData.get("id");
-            return confirm(`Hapus user '${id}'?`);
+            return confirm(`Delete customer '${id}'?`);
         }
     </script>
 </body>

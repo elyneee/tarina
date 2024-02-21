@@ -3,13 +3,13 @@
 require "koneksi.php";
 
 $id = $_POST["id"];
-$product_name = $_POST["product_name"];
+$name = $_POST["name"];
 $category = $_POST["category"];
 $stock = $_POST["stock"];
 $price_beli = $_POST["price_beli"];
 $price_jual = $_POST["price_jual"];
 
-$sql = "UPDATE product SET product_name = '$product_name', category = '$category', stock = '$stock', price_beli = '$price_beli', price_jual = '$price_jual' WHERE id = '$id'";
+$sql = "UPDATE product SET name = '$name', category = '$category', stock = '$stock', price_beli = '$price_beli', price_jual = '$price_jual' WHERE id = '$id'";
 mysqli_query($koneksi, $sql);
 
 if (mysqli_error($koneksi)) {

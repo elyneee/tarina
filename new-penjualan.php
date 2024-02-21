@@ -2,7 +2,7 @@
     <html>
 
     <head>
-        <title>New sales</title>
+        <title>New Sales</title>
     </head>
 
     <body>
@@ -24,10 +24,10 @@
 
         <div>
             <form action="create-sales.php" method="post">
-                <h1>Add sales</h1>
+                <h1>Add Sales</h1>
                 <table>
                     <tr>
-                        <td>product</td>
+                        <td>Product</td>
                         <td>
                             <select name="id_product">
                                 <?php while ($product = mysqli_fetch_array($query)) : ?>
@@ -39,7 +39,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>quantity</td>
+                        <td>Quantity</td>
                         <td><input type="number" min="0" name="quantity"></td>
                     </tr>
                     <tr>

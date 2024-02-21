@@ -3,6 +3,7 @@
 
 <head>
     <title>Product</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>
@@ -17,14 +18,14 @@
     ?>
 
     <div>
-        <h1>Data product</h1>
+        <h1>Data Product</h1>
         <form action="new-barang.php" method="GET">
             <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>product_name</th>
+                <th>Name</th>
                 <th>Category</th>
                 <th>Stock</th>
                 <th>Price</th>
@@ -36,7 +37,7 @@
             <?php while ($product = mysqli_fetch_array($query)) : ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><?= $product["product_name"] ?></td>
+                    <td><?= $product["name"] ?></td>
                     <td><?= $product["category"] ?></td>
                     <td><?= $product["stock"] ?></td>
                     <td><?= $product["price"] ?></td>
@@ -44,13 +45,13 @@
                     <td><?= $product["updated_at"] ?></td>
                     <td>
                         <form action="read-barang.php" method="GET">
-                            <input type="hidden" product_name="id" value='<?= $product["id"] ?>'>
+                            <input type="hidden" name="id" value='<?= $product["id"] ?>'>
                             <button type="submit">See</button>
                         </form>
                     </td>
                     <td>
                         <form action="delete-barang.php" method="POST" onsubmit="return konfirmasi(this)">
-                            <input type="hidden" product_name="id" value='<?= $product["id"] ?>'>
+                            <input type="hidden" name="id" value='<?= $product["id"] ?>'>
                             <button type="submit">Delete</button>
                         </form>
                     </td>

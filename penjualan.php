@@ -2,8 +2,20 @@
 <html>
 
 <head>
-    <title>sales</title>
+    <title>Sales</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
+
+<style>
+    .body {
+        background-color: #331b08;
+        padding: 2rem;
+    }
+
+    .h1 {
+        color: #f0dfd3;
+    }
+</style>
 
 <body>
     <?php include "menu.php"; ?>
@@ -17,19 +29,19 @@
     ?>
 
     <div>
-        <h1>Data sales</h1>
+        <h1>Sales Data</h1>
         <form action="new-sales.php" method="GET">
             <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>name product</th>
-                <th>quantity</th>
-                <th>Total price</th>
-                <th>Diinput oleh</th>
-                <th>Waktu</th>
-                <th colspan="2">Aksi</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                <th>Inputted by</th>
+                <th>Time</th>
+                <th colspan="2">Action</th>
             </tr>
 
             <?php $i = 1; ?>
@@ -44,7 +56,7 @@
                     <td>
                         <form action="read-sales.php" method="GET">
                             <input type="hidden" name="id" value='<?= $sales["id"] ?>'>
-                            <button type="submit">Lihat</button>
+                            <button type="submit">See</button>
                         </form>
                     </td>
                     <td>

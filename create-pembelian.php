@@ -15,7 +15,7 @@ $total_amount = $quantity * $product["price_beli"];
 
 $id_user = $_SESSION["id"];
 
-$sql = "INSERT INTO pembelian (id_product, quantity, total_amount, id_user) VALUES ('$id_product', '$quantity', '$total_amount', '$id_user')";
+$sql = "INSERT INTO purchase (id_product, quantity, total_amount, id_user) VALUES ('$id_product', '$quantity', '$total_amount', '$id_user')";
 mysqli_query($koneksi, $sql);
 
 $sql = "UPDATE product SET stock = stock + $quantity WHERE id = '$id_product'";

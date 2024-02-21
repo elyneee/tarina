@@ -33,9 +33,9 @@
                     <td>Level</td>
                     <td>
                         <select name="level">
-                            <option value="admin">admin</option>
-                            <option value="finance">finance</option>
-                            <option value="logistics">logistics</option>
+                            <option value="admin">Admin</option>
+                            <option value="finance">Finance</option>
+                            <option value="logistics">Logistics</option>
                         </select>
                     </td>
                 </tr>

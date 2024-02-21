@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>New Pembelian</title>
+    <title>New purchase</title>
 </head>
 
 <body>
@@ -17,11 +17,11 @@
     ?>
 
     <div>
-        <form action="create-pembelian.php" method="post">
-            <h1>Add Pembelian</h1>
+        <form action="create-purchase.php" method="post">
+            <h1>Add purchase</h1>
             <table>
                 <tr>
-                    <td>product</td>
+                    <td>Product</td>
                     <td>
                         <select name="id_product">
                             <?php while ($product = mysqli_fetch_array($query)) : ?>
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>quantity</td>
+                    <td>Quantity</td>
                     <td><input type="number" min="0" name="quantity"></td>
                 </tr>
                 <tr>

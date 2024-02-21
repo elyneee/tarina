@@ -2,8 +2,20 @@
 <html>
 
 <head>
-    <title>Pembelian</title>
+    <title>Purchase</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
+
+<style>
+    .body {
+        background-color: #40220b;
+        padding: 2rem;
+    }
+
+    .h1 {
+        color: #f0dfd3;
+    }
+</style>
 
 <body>
     <?php include "menu.php"; ?>
@@ -12,44 +24,44 @@
 
     require "koneksi.php";
 
-    $sql = "SELECT pembelian.id, product.name as name_product, pembelian.quantity, pembelian.total_amount, user.username, pembelian.created_at FROM product JOIN pembelian on product.id = pembelian.id_product JOIN user ON user.id = pembelian.id_user ORDER BY pembelian.created_at DESC";
+    $sql = "SELECT purchase.id, product.name as name_product, purchase.quantity, purchase.total_amount, user.username, purchase.created_at FROM product JOIN purchase on product.id = purchase.id_product JOIN user ON user.id = purchase.id_user ORDER BY purchase.created_at DESC";
     $query = mysqli_query($koneksi, $sql);
     ?>
 
     <div>
-        <h1>Data Pembelian</h1>
+        <h1>Purchase Data</h1>
         <form action="new-pembelian.php" method="get">
             <button type="submit">Add</button>
         </form>
         <table border="1">
             <tr>
                 <th>No.</th>
-                <th>name product</th>
-                <th>quantity</th>
+                <th>Name</th>
+                <th>Quantity</th>
                 <th>Total price</th>
-                <th>Diinput oleh</th>
-                <th>Waktu</th>
-                <th colspan="2">Aksi</th>
+                <th>Inputted by</th>
+                <th>Time</th>
+                <th colspan="2">Action</th>
             </tr>
 
             <?php $i = 1; ?>
-            <?php while ($pembelian = mysqli_fetch_array($query)) : ?>
+            <?php while ($purchase = mysqli_fetch_array($query)) : ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><?= $pembelian["name_product"] ?></td>
-                    <td><?= $pembelian["quantity"] ?></td>
-                    <td><?= $pembelian["total_amount"] ?></td>
-                    <td><?= $pembelian["username"] ?></td>
-                    <td><?= $pembelian["created_at"] ?></td>
+                    <td><?= $purchase["product_name"] ?></td>
+                    <td><?= $purchase["quantity"] ?></td>
+                    <td><?= $purchase["total_amount"] ?></td>
+                    <td><?= $purchase["username"] ?></td>
+                    <td><?= $purchase["created_at"] ?></td>
                     <td>
                         <form action="read-pembelian.php" method="get">
-                            <input type="hidden" name="id" value='<?= $pembelian["id"] ?>'>
+                            <input type="hidden" name="id" value='<?= $purchase["id"] ?>'>
                             <button type="submit">Lihat</button>
                         </form>
                     </td>
                     <td>
-                        <form action="delete-pembelian.php" method="post" onsubmit="return konfirmasi(this)">
-                            <input type="hidden" name="id" value='<?= $pembelian["id"] ?>'>
+                        <form action="delete-purchase.php" method="post" onsubmit="return konfirmasi(this)">
+                            <input type="hidden" name="id" value='<?= $purchase["id"] ?>'>
                             <button type="submit">Delete</button>
                         </form>
                     </td>

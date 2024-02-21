@@ -1,0 +1,83 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin-left: 175px;
+  padding: 0;
+  background-color: #f0dfd3;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #331b08;
+  margin: 0 0 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #f0dfd3;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: #ad774e;
+  color: #331b08;
+}
+
+tr:nth-child(even) {
+  background-color: #f0dfd3;
+}
+
+form {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+button {
+  background-color: #ad774e;
+  color: #f0dfd3;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5e412a;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #5e412a;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #ad774e;
+  color: #f0dfd3;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #5e412a;
+}
+
+/* Specific styles for each page */
+.profile-page {
+  background-color: #ad774e;
+  padding: 2rem;
+}
+
+.profile-page h1 {
+  color: #f0dfd3;
+}
