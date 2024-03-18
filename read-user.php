@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Read User</title>
+    <title>User Data</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
 
     <div>
         <form action="update-user.php" method="POST">
-            <h1>Lihat User</h1>
+            <h1>View User</h1>
 
             <input type="hidden" name="id" value=" <?= $id ?>">
             <input type="hidden" name="old_password" value="<?= $user["password"] ?>">

@@ -3,6 +3,7 @@
 
 <head>
     <title>New Product</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 
 <body>
@@ -10,7 +11,7 @@
 
     <?php
     if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistics") {
-        echo "Anda tidak dapat mengakses halaman ini";
+        echo "You are unable to access this page";
         exit;
     }
     ?>
@@ -38,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td><input type="number" min="0" name="price_beli"></td>
+                    <td><input type="number" min="0" name="price"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

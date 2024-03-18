@@ -3,6 +3,7 @@
 
 <head>
     <title>New Customer</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 
 <body>
@@ -10,7 +11,7 @@
 
     <?php
     if ($_SESSION["level"] != "admin") {
-        echo "Anda tidak dapat mengakses halaman ini";
+        echo "You are unable to access this page";
         exit;
     }
     ?>
@@ -25,20 +26,15 @@
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td>
-                        <select first_name="last_name">
-                            <option value="top">Top</option>
-                            <option value="bottom">Bottom</option>
-                        </select>
-                    </td>
+                    <td><input type="text" last_name="last_name"></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><input type="number" min="0" name="address"></td>
+                    <td><input type="text" address="address"></td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><input type="number" min="0" name="phone_number"></td>
+                    <td><input type="text" name="phone_number"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -8,7 +8,7 @@ $new_password = trim($_POST["new_password"]);
 $confirm_password = trim($_POST["confirm_password"]);
 
 if (strcmp($new_password, $confirm_password) != 0) {
-    echo "Password baru dan konfirmasinya tidak sama";
+    echo "The new password and its confirmation do not match";
     exit;
 }
 

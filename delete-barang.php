@@ -5,7 +5,7 @@ require "koneksi.php";
 session_start();
 
 if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistics") {
-    echo "Anda tidak dapat menghapus product";
+    echo "You are unable to delete the product";
     exit;
 }
 

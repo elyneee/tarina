@@ -33,11 +33,11 @@
                     <td><input readonly type="text" name="username" value="<?= $user["username"] ?>"></td>
                 </tr>
                 <tr>
-                    <td>Password Baru</td>
+                    <td>New Password</td>
                     <td><input required type="password" name="new_password"></td>
                 </tr>
                 <tr>
-                    <td>Ulangi Password Baru</td>
+                    <td>Repeat New Password</td>
                     <td><input required type="password" name="confirm_password"></td>
                 </tr>
                 <tr>

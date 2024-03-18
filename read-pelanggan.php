@@ -3,6 +3,7 @@
 
 <head>
     <title>Customer Information</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>

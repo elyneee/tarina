@@ -6,17 +6,6 @@
     <link rel="stylesheet" href="datastyle.css">
 </head>
 
-<style>
-    .body {
-        background-color: #331b08;
-        padding: 2rem;
-    }
-
-    .h1 {
-        color: #f0dfd3;
-    }
-</style>
-
 <body>
     <?php include "menu.php"; ?>
 
@@ -30,8 +19,9 @@
 
     <div>
         <h1>Sales Data</h1>
-        <form action="new-sales.php" method="GET">
+        <form action="new-penjualan.php" method="GET">
             <button type="submit">Add</button>
+            <button onclick="cetakLaporan()">Print</button>
         </form>
         <table border="1">
             <tr>
@@ -53,13 +43,13 @@
                     <td><?= $sales["total_amount"] ?></td>
                     <td><?= $sales["username"] ?></td>
                     <td><?= $sales["created_at"] ?></td>
-                    <td>
+                    <td class="action">
                         <form action="read-sales.php" method="GET">
                             <input type="hidden" name="id" value='<?= $sales["id"] ?>'>
                             <button type="submit">See</button>
                         </form>
                     </td>
-                    <td>
+                    <td class="action">
                         <form action="delete-sales.php" method="POST" onsubmit="return konfirmasi(this)">
                             <input type="hidden" name="id" value='<?= $sales["id"] ?>'>
                             <button type="submit">Delete</button>
@@ -70,6 +60,7 @@
             <?php endwhile ?>
         </table>
     </div>
+
     <script>
         function konfirmasi(form) {
             formData = new FormData(form);
@@ -77,6 +68,14 @@
             return confirm(`Hapus sales '${id}'?`);
         }
     </script>
+
+    <script>
+        function cetakLaporan() {
+            window.print();
+        }
+    </script>
+
+
 </body>
 
 </html>

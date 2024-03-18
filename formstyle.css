@@ -72,18 +72,6 @@ input[type="reset"]:hover {
   background-color: #0d0e10;
 }
 
-/* Gaya CSS untuk menyembunyikan navbar saat mencetak */
-@media print {
-  body {
-    margin: 0px;
-  }
-
-  button {
-    display: none;
-  }
-
-  th:last-child,
-  td:last-child {
-    display: none;
-  }
+option {
+  padding: 2rem;
 }

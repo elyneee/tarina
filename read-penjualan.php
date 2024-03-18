@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Read sales</title>
+    <title>Sales Data</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>
@@ -23,26 +24,26 @@
     ?>
 
     <div>
-        <h1>Lihat sales</h1>
+        <h1>View Sales Data</h1>
         <table>
             <tr>
-                <td>name product</td>
+                <td>Product Name</td>
                 <td><input readonly type="text" value="<?= $sales["name_product"] ?>"></td>
             </tr>
             <tr>
-                <td>quantity</td>
+                <td>Quantity</td>
                 <td><input readonly type="text" value="<?= $sales["quantity"] ?>"></td>
             </tr>
             <tr>
-                <td>Total price</td>
+                <td>Total Amount</td>
                 <td><input readonly type="text" value="<?= $sales["total_amount"] ?>"></td>
             </tr>
             <tr>
-                <td>Diinput oleh</td>
+                <td>Inputted by</td>
                 <td><input readonly type="text" value="<?= $sales["username"] ?>"></td>
             </tr>
             <tr>
-                <td>Waktu</td>
+                <td>Time</td>
                 <td><input readonly type="text" value="<?= $sales["created_at"] ?>"></td>
             </tr>
         </table>

@@ -9,27 +9,15 @@
 </head>
 
 <body>
-    <div class="container">
-        <form action="validasi.php" method="POST" class="login-form">
-            <h1>Welcome!</h1>
-            <table>
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username" class="input-field"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password" class="input-field"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="button-container">
-                        <button type="submit" class="login-button">LOGIN</button>
-                        <button type="reset" class="clear-button">CLEAR</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+    <form action="validasi.php" method="POST" class="login-form">
+        <h1>WELCOME!</h1>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">LOGIN</button>
+        <button type="reset">CLEAR</button>
+    </form>
 </body>
 
 </html>

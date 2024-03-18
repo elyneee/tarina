@@ -21,6 +21,7 @@
         <h1>Customer Data</h1>
         <form action="new-pelanggan.php" method="GET">
             <button type="submit">Add</button>
+            <button onclick="cetakLaporan()">Print</button>
         </form>
         <table border="1">
             <tr>
@@ -67,6 +68,13 @@
             return confirm(`Delete customer '${id}'?`);
         }
     </script>
+
+    <script>
+        function cetakLaporan() {
+            window.print();
+        }
+    </script>
+
 </body>
 
 </html>

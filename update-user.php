@@ -5,7 +5,7 @@ require "koneksi.php";
 session_start();
 
 if ($_POST["id"] == $_SESSION["id"]) {
-    echo "Tidak bisa edit user yang sedang aktif";
+    echo "It's not possible to edit an active user";
     exit;
 }
 

@@ -6,13 +6,6 @@
     <link rel="stylesheet" href="datastyle.css">
 </head>
 
-<style>
-    body {
-        background-color: #5e412a;
-        padding: 2rem;
-    }
-</style>
-
 <body>
     <?php include "menu.php"; ?>
 
@@ -29,9 +22,10 @@
     ?>
 
     <div>
-        <h1>Data User</h1>
+        <h1>User Data</h1>
         <form action="new-user.php" method="GET">
             <button type="submit">Add</button>
+            <button onclick="cetakLaporan()">Print</button>
         </form>
         <table border="1">
             <tr>
@@ -74,6 +68,13 @@
             return confirm(`Hapus user '${id}'?`);
         }
     </script>
+
+    <script>
+        function cetakLaporan() {
+            window.print();
+        }
+    </script>
+
 </body>
 
 </html>

@@ -23,118 +23,187 @@ if (!array_key_exists("username", $_SESSION)) {
 
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #f2f2f2;
+        background-color: white;
         padding: 50px;
     }
 
     nav {
-        background-color: #333;
-        color: #fff;
+        background-color: whitesmoke;
+        color: black;
         position: fixed;
         top: 0;
         left: 0;
-        width: 175px;
+        width: 145px;
         height: 100%;
         padding: 20px;
         box-sizing: border-box;
         transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+        font-size: medium;
     }
 
+    /* list navbar */
     nav ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* tarina */
     nav ul li {
         padding: 10px 0;
-        border-bottom: 1px solid #444;
     }
 
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .list {
+        margin-top: 150px;
+        padding: 5px 0;
+        position: absolute;
+    }
+
+    .list a:hover {
+        background-color: black;
+        color: white;
+        display: flex;
+    }
+
+    .tarina {
+        writing-mode: vertical-lr;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+
+    .tarina a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* welcome + log out */
     nav ul li:last-child {
         border-bottom: none;
     }
 
-    nav ul li a {
-        color: #fff;
+    /* log out link */
+    nav ul li:last-child a {
         text-decoration: none;
-        display: block;
-        padding: 10px;
+        color: black;
     }
 
-    nav ul li a:hover {
-        color: #ddd;
-        background-color: #444;
-    }
-
+    /* list dropdown */
     nav ul li ul {
         display: none;
+        float: left;
         position: relative;
         top: 0;
         left: 100%;
     }
 
+    /* list dropdown hover */
     nav ul li:hover>ul {
-        display: block;
+        display: contents;
     }
 
+    /* list dropdown */
     nav ul li ul li {
         padding: 0;
     }
 
-    nav ul li ul li a {
-        padding: 5px 10px;
-    }
-
-    nav ul li ul li a:hover {
-        color: #ddd;
-        background-color: #555;
-    }
-
+    /* transaction */
     nav ul li ul li ul {
         left: 100%;
         top: 0;
     }
 
+    /* transaction list link */
     nav ul li ul li ul li a {
         padding: 5px 15px;
     }
 
-    nav ul li ul li ul li a:hover {
-        color: #ddd;
-        background-color: #555;
+    .logout {
+        text-align: center;
     }
 
-    body {
-        background-color: #d8cccc;
+    .logout a {
+        margin-top: 450px;
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+
+    .logout a:hover {
+        background-color: black;
+        color: white;
+    }
+
+    footer {
+        color: black;
+        text-align: center;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        left: 150px;
+        right: 0;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    @media print {
+        nav {
+            display: none;
+        }
+
+        footer {
+            display: none;
+        }
     }
 </style>
 
 <nav>
     <ul>
-        <li><a href="home.php">TARINA</a></li>
-        <li>MASTER
-            <ul>
-                <?php if ($_SESSION["level"] == "admin") : ?>
-                    <li><a href="user.php">User</a></li>
-                <?php endif ?>
-                <?php if ($_SESSION["level"] == "admin") : ?>
-                    <li><a href="pelanggan.php">Customer</a></li>
-                <?php endif ?>
-                <li><a href="barang.php">Product</a></li>
-            </ul>
-        </li>
-        <li>TRANSACTION
-            <ul>
-                <li><a href="penjualan.php">Sales</a></li>
-                <li><a href="pembelian.php">Purchase</a></li>
-            </ul>
-        </li>
-        <li>Welcome, <?= $_SESSION["username"] ?>!
-            <ul>
-                <li><a href="profil.php">Profile</a></li>
-            </ul>
-        </li>
-        <li><a href="logout.php">Log Out</a></li>
+        <div class="tarina">
+            <li><a href="home.php">TARINA</a></li>
+        </div>
+        <div class="list">
+            <li>MASTER
+                <ul>
+                    <?php if ($_SESSION["level"] == "admin") : ?>
+                        <li><a href="user.php">User</a></li>
+                    <?php endif ?>
+                    <?php if ($_SESSION["level"] == "admin") : ?>
+                        <li><a href="pelanggan.php">Customer</a></li>
+                    <?php endif ?>
+                    <li><a href="barang.php">Product</a></li>
+                </ul>
+            </li>
+            <li>TRANSACTION
+                <ul>
+                    <li><a href="penjualan.php">Sales</a></li>
+                </ul>
+            </li>
+            <li>WELCOME, <?= $_SESSION["username"] ?>!
+                <ul>
+                    <li><a href="profil.php">Profile</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="logout">
+            <li><a href="logout.php">LOG OUT</a></li>
+        </div>
     </ul>
 </nav>
+
+<footer>
+    <p>&copy; 2024 TARINA Clothing Store</p>
+</footer>

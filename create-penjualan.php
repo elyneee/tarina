@@ -7,16 +7,16 @@ session_start();
 $id_product = $_POST["id_product"];
 $quantity = $_POST["quantity"];
 
-$sql = "SELECT price_jual, stock FROM product WHERE id = '$id_product'";
+$sql = "SELECT price, stock FROM product WHERE id = '$id_product'";
 $query = mysqli_query($koneksi, $sql);
 $product = mysqli_fetch_array($query);
 
 if ($quantity > $product["stock"]) {
-    echo "stock product tidak mencukupi";
+    echo "Insufficient product stock";
     exit;
 }
 
-$total_amount = $quantity * $product["price_jual"];
+$total_amount = $quantity * $product["price"];
 
 $id_user = $_SESSION["id"];
 

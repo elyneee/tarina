@@ -3,6 +3,7 @@
 
 <head>
     <title>New User</title>
+    <link rel="stylesheet" href="formstyle.css">
 </head>
 
 <body>
@@ -11,7 +12,7 @@
     <?php
     if ($_SESSION["level"] != "admin") {
         // jika di sesi ini levelnya bukan admin, akses ditolak
-        echo "Anda tidak dapat mengakses halaman ini";
+        echo "You are unable to access this page";
         exit;
     }
     ?>

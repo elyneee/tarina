@@ -3,6 +3,7 @@
 
     <head>
         <title>New Sales</title>
+        <link rel="stylesheet" href="formstyle.css">
     </head>
 
     <body>
@@ -10,7 +11,7 @@
 
         <?php
         if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "finance") {
-            echo "Anda tidak dapat mengakses halaman ini";
+            echo "You are unable to access this page";
             exit;
         }
         ?>
@@ -32,7 +33,7 @@
                             <select name="id_product">
                                 <?php while ($product = mysqli_fetch_array($query)) : ?>
                                     <option value='<?= $product["id"] ?>'>
-                                        <?= $product["name"] ?>, price: <?= $product["price_jual"] ?>, stock: <?= $product["stock"] ?>
+                                        <?= $product["name"] ?>, price: <?= $product["price"] ?>, stock: <?= $product["stock"] ?>
                                     </option>
                                 <?php endwhile ?>
                             </select>

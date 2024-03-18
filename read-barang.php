@@ -3,6 +3,7 @@
 
 <head>
     <title>Product Information</title>
+    <link rel="stylesheet" href="datastyle.css">
 </head>
 
 <body>
@@ -46,12 +47,8 @@
                     <td><input type="number" name="stock" value="<?= $product["stock"] ?>"></td>
                 </tr>
                 <tr>
-                    <td>Cost Price</td>
-                    <td><input type="number" name="cost_price" value="<?= $product["price_beli"] ?>"></td>
-                </tr>
-                <tr>
-                    <td>Selling Price</td>
-                    <td><input type="number" name="selling_price" value="<?= $product["price_jual"] ?>"></td>
+                    <td>Price</td>
+                    <td><input type="number" name="price" value="<?= $product["price"] ?>"></td>
                 </tr>
                 <tr>
                     <td colspan="2">

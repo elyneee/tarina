@@ -18,9 +18,10 @@
     ?>
 
     <div>
-        <h1>Data Product</h1>
+        <h1>Product Data</h1>
         <form action="new-barang.php" method="GET">
             <button type="submit">Add</button>
+            <button onclick="cetakLaporan()">Print</button>
         </form>
         <table border="1">
             <tr>
@@ -67,6 +68,13 @@
             return confirm(`Delete product '${id}'?`);
         }
     </script>
+
+    <script>
+        function cetakLaporan() {
+            window.print();
+        }
+    </script>
+
 </body>
 
 </html>

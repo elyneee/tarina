@@ -5,7 +5,7 @@ require "koneksi.php";
 session_start();
 
 if ($_SESSION["level"] != "admin") {
-    echo "Anda tidak dapat menghapus customer";
+    echo "You are unable to delete the customer";
     exit;
 }
 

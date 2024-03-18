@@ -5,7 +5,7 @@ require "koneksi.php";
 session_start();
 
 if ($_POST["id"] == $_SESSION["id"]) {
-    echo "Tidak bisa hapus user yang sedang aktif";
+    echo "It's not possible to delete an active user";
     exit;
 }
 
